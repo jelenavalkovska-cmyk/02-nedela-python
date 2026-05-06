@@ -2,13 +2,23 @@
 import random; 
 N= random.randint(1, 100)
 print(N)
-k = 1
+k = 0
 
-while True or k < 10: 
+def ievadit_skaitli():
+    while True:
+        try:
+            minejums = int(input("Tavs minējums: "))
+            if 0 <= minejums <= 100:
+                return minejums
+            else:
+                print("Kļūda: Skaitlim jābūt robežās no 0 līdz 110!")
+        except ValueError:
+            print("Kļūda: Lūdzu, ievadiet veselu skaitli!")
 
-    minejums = int(input("Tavs minējums: ")) 
-   
+while True and k < 10: 
 
+    minejums = ievadit_skaitli() 
+  
     # ... apstrāde ... 
 
     if minejums < N: 
@@ -20,3 +30,6 @@ while True or k < 10:
     else: 
         print(f"Apsveicu! Tu uzminēji, izmantojot {k} minējumus!")
         break 
+
+    if k == 10:
+        print("Tu izmantoji visus 10 mēģinājumus! GAME over!")
